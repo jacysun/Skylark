@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skylark</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+  </head>
+
+<body>
+  <header>
+    <nav id="header-nav" class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="index.html" class="pull-left visible-md visible-lg">
+            <div id="logo-img" alt="Logo image"></div>
+          </a>
+
+          <div class="navbar-brand">
+            <a href="main.html"><h1>Skylark</h1></a>
+          </div>
+        </div>
+        
+        <div id="collapsable-nav" class="collapse navbar-collapse">
+           <ul id="nav-list" class="nav navbar-nav navbar-right">
+             <li id="phone"><a href="tel:410-602-5008">800-602-5008</a></li>
+             <li class="login"><a href="#"> Log In</a></li>
+             <li class="account"><a href="#"> My Account</a></li>
+             <li class="shopcart"><a href="#"> Shopping Cart (0)</a></li>
+           </ul><!-- #nav-list -->
+        </div><!-- .collapse .navbar-collapse -->
+        <div id="collapsable-nav" class="collapse navbar-collapse">
+          <ul id="info" class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="href/product-type.html">About Skylark</a></li>
+            <li><a href="href/mission.html">Policy</a></li>
+            <li><a href="href/resources.html">Contact Us</a></li>
+          </ul>
+        </div>
+    </nav><!-- #header-nav -->
+</header>
+
+<div id="main-content" class="container">
+  <div class="row">
+    <div class="col-md-7">
+        <img src="images/pic1.jpg" alt="Picture of airplane">
+    </div>
+    <div id="search" class="col-md-5">
+       <p>Search Flights</p>
+       <form>
+         <label><input type="radio" name="trip" value="one-way" onchange="checkReturn()">One-way</label>
+         <label><input id="roundTrip" type="radio" name="trip" value="round-trip" onchange="checkReturn()">Round-trip</label><br>
+         <label for='from'>From</label>
+         <input type='text' id='from' name='from' pattern="[A-Z]{3}" required>
+         <label for='to'>To</label>
+         <input type='text' id='to' name='to' pattern="[A-Z]{3}" required><br>
+         <label for='depart'>Depart</label>
+         <input type='date' id='depart' value='depart' required>
+         <label for='arrive'>Return</label>
+         <input type='date' id='return' value='return'><br>  
+         <select name="seat type">
+           <option value="coach">coach seat</option>
+           <option value="firstclass">first class seat</option>
+         </select><br>
+         <input type='submit' value="Search" onclick="return check();">
+       </form>
+    </div>
+  </div> 
+</div>
+  
+  <footer class="panel-footer">
+      <div class="row">
+        <section id="hours" class="col-sm-4">
+          <span>Contact Hours:</span><br>
+          Monday-Friday: 8am - 6pm<br>
+          Saturday-Sunday: 9am - 5pm<br>
+          <hr class="visible-xs">
+        </section>
+        <section id="address" class="col-sm-4">
+          <span>Address:</span><br>
+          55 North Lake Ave<br>
+          Worcester, MA 01605
+          <p>* </p>
+          <hr class="visible-xs">
+        </section>
+        <section id="other" class="col-sm-4">
+          <p>"xxx"</p>
+          <p>""</p>
+        </section>
+      </div>
+      <div class="text-center">&copy; 2016 All Rights Reserved. FCATA is a registered trademark of WPI, Inc.</div>
+  </footer>
+
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/ajax-utils.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
