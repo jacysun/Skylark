@@ -13,7 +13,7 @@ public class QueryFactory {
 	 * @return 
 	 */
 	public static String getAirports(String team) {
-		return "team=" + team + "&action=list&list_type=airports";
+		return "?team=" + team + "&action=list&list_type=airports";
 	}
 	
 	/**
@@ -24,7 +24,7 @@ public class QueryFactory {
 	 */
 	
 	public static String getAirplanes(String team) {
-		return "team=" + team + "&action=list&list_type=airplanes";
+		return "?team=" + team + "&action=list&list_type=airplanes";
 	}
 	
 	/**
@@ -36,7 +36,7 @@ public class QueryFactory {
 	 * @return
 	 */
 	public static String getDepartingFlights(String team, String code, String day) {
-		return "team=" + team + "&action=list&list_type=departing&airport=" + code + "&day=" + day;
+		return "?team=" + team + "&action=list&list_type=departing&airport=" + code + "&day=" + day;
 	}
 	
 	/**
@@ -47,9 +47,9 @@ public class QueryFactory {
 	 * @param day
 	 * @return
 	 */
-	public static String getArrivingFlights(String team, String code, String day) {
-		return "team=" + team + "&action=list&list_type=arriving&airport=" + code + "&day=" + day;
-	}
+	/*public static String getArrivingFlights(String team, String code, String day) {
+		return "?team=" + team + "&action=list&list_type=arriving&airport=" + code + "&day=" + day;
+	}*/
 	
 	/**
 	 * Return
