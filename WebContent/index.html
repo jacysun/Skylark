@@ -46,7 +46,7 @@
     </div>
     <div id="search" class="col-xs-12 col-sm-5">
        <p>Search Flights</p>
-       <form>
+       <form id="form" name="search" action="search.jsp" method="get">
          <label><input type="radio" name="trip" value="one-way" onchange="checkReturn()">One-way</label>
          <label><input id="roundTrip" type="radio" name="trip" value="round-trip" onchange="checkReturn()">Round-trip</label><br>
          <p></p>
@@ -60,12 +60,12 @@
          <label for='arrive'>Return</label>
          <input type='date' id='return' value='return'><br>  
          <p></p>
-         <select name="seat type">
+         <select id = "seat" name="seat type">
            <option value="coach">coach seat</option>
            <option value="firstclass">first class seat</option>
          </select><br>
          <p></p>
-         <input type='submit' value="Search" onclick="return check();">
+         <input type='submit' value="Search">
        </form>
     </div>
   </div> 
