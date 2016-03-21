@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,32 +22,29 @@ public class RequestFlight extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter(); 
+		PrintWriter out = response.getWriter();
 		String trip = request.getParameter("trip");
 		String departure = request.getParameter("from");
 		String arrival = request.getParameter("to");
 		String depDate = request.getParameter("depart");
 		String retDate = request.getParameter("return");
+		String seat = request.getParameter("seat type");
+		//out.println("We know you searched for " + trip + " " + departure + " " + arrival + " " + depDate + " " + seat);	
+      
+        request.setAttribute("departure", departure);
+        request.setAttribute("arrival", arrival);
+        request.setAttribute("depDate", depDate);
+        request.setAttribute("retDate", retDate);
+        request.setAttribute("seat", seat);
 		
-		if (departure == "BOS") {
-			response.sendRedirect("searchOneWay.jsp");
-		}
-		
-		//if ("one-way".equals(trip)) {
-	//	response.sendRedirect("searchOneWay.jsp");
-		//} else if ("round-trip".equals(trip)) {
-		//	response.sendRedirect("searchRoundTrip.jsp");
-		//}
-		//return;
-	
-		/*RetrieveData rd = new RetrieveData();
-		String airport = rd.getAirports("team06");
-		String flight = rd.getDepartureFlights("team06", departure, depDate);
-		String airplane = rd.getAirplanes("06");
-
-		if (airplane != null && flight != null && airport != null ) {
-			response.sendRedirect("searchResult.jsp");
+		if (trip.equals("one-way")) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("searchOneWay.jsp");
+			dispatcher.forward(request, response);
 			return;
-		}*/
+		} else if (trip.equals("round-trip")) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("searchRoundTrip.jsp");
+			dispatcher.forward(request, response);
+			return;
+		}
 	}
 }
