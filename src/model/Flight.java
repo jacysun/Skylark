@@ -10,6 +10,7 @@ package model;
 public class Flight {
 	
 	private String airplane;
+	private String number;
 	private String flightTime;
 	private String departCode;
 	private String departTime;
@@ -20,10 +21,11 @@ public class Flight {
 	private int firstClassSeats;
 	private int coachSeats;
 	
-	public Flight (String airplane, String flightTime, String departCode, String departTime, String arrivalCode,
+	public Flight (String airplane, String number, String flightTime, String departCode, String departTime, String arrivalCode,
 			       String arrivalTime, String firstClassPrice, String coachPrice, int firstClassSeats, int coachSeats) {
 		
 		this.airplane = airplane;
+		this.number = number;
 		this.flightTime = flightTime;
 		this.departCode = departCode;
 		this.departTime = departTime;
@@ -49,6 +51,19 @@ public class Flight {
 		this.airplane = airplane;
 	}
 
+	/**
+	 * @return the flight number
+	 */
+	public String getNumber() {
+		return number;
+	}
+
+	/**
+	 * @param number the flight number
+	 */
+	public void setNumber(String number) {
+		this.number = number;
+	}
 	/**
 	 * @return the flightTime
 	 */
