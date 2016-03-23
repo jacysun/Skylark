@@ -133,10 +133,10 @@ public class MyTime{
 		try{
 			URL url = new URL(baseUrl+locationPar+timeStampPar+KEY);
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-			connection.setRequestMethod("GET");
+			//connection.setRequestMethod("GET");
 			int responseCode = connection.getResponseCode();
 			
-			if((responseCode>=200)&&(responseCode<=299)){
+			if(responseCode == HttpURLConnection.HTTP_OK){
 				InputStream stream = connection.getInputStream();
 				BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 				String buffer;
