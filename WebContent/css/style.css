@@ -49,14 +49,13 @@ body {
 /* END HEADER */
 
 /* MAIN CONTENT */
-#main-content {
-  width: 95%;
-  background-color: #e7e7e7;
-}
-.container img {
+.row img {
   margin: 20px 10px 20px 10px;
-  width: 600px;
-  height: 400px;
+}
+
+.text-center img {
+  margin: 100px 100px;
+  width: 100px;
 }
 
 #search form {
@@ -69,6 +68,7 @@ body {
   color: #ff8000;
   text-align: center;
   margin: 30px 10px 30px 10px;
+
 }
 /* End Main Content */
 
@@ -77,7 +77,7 @@ body {
   margin-top: 30px;
   padding-top: 35px;
   padding-bottom: 30px;
-  background-color: #e7e7e7;
+  background-color: #e8e8e;
   border-top: 0;
 }
 .panel-footer div.row {
@@ -94,3 +94,27 @@ body {
     width: 50%;
 }
 /* End Footer */
+
+@media (min-width: 1200px) {
+  .row img {
+    width: 600px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .row img {
+    width: 500px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .row img {
+    width: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+
+}
+
+
