@@ -29,7 +29,6 @@ public class RequestFlight extends HttpServlet {
 		String depDate = request.getParameter("depart");
 		String retDate = request.getParameter("return");
 		String seat = request.getParameter("seat type");
-		//out.println("We know you searched for " + trip + " " + departure + " " + arrival + " " + depDate + " " + seat);	
       
         request.setAttribute("departure", departure);
         request.setAttribute("arrival", arrival);
